@@ -13,7 +13,6 @@ public class selectionSort {
                 minIndex = j<arr[minIndex] ?j: minIndex ;
             }
             swap(arr, i, minIndex);
-
         }
     }
     private static void swap(int[] arr, int i, int j) {
