@@ -1,0 +1,113 @@
+Index: Algorithm.iml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- Algorithm.iml	(date 1595946571966)
++++ Algorithm.iml	(date 1595946571966)
+@@ -0,0 +1,11 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<module type="JAVA_MODULE" version="4">
++  <component name="NewModuleRootManager" inherit-compiler-output="true">
++    <exclude-output />
++    <content url="file://$MODULE_DIR$">
++      <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
++    </content>
++    <orderEntry type="inheritedJdk" />
++    <orderEntry type="sourceFolder" forTests="false" />
++  </component>
++</module>
+\ No newline at end of file
+Index: src/one/BubbleSort.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/one/BubbleSort.java	(date 1595948669120)
++++ src/one/BubbleSort.java	(date 1595948669120)
+@@ -0,0 +1,23 @@
++package one;
++
++public class BubbleSort {
++
++    public static void  bubbleSort(int[] arr){
++        if (arr == null || arr.length<2){
++            return;
++        }
++        for (int end = arr.length -1; end> 0;end--){
++            for (int i = 0; i<end; i++){
++                if (arr[i] > arr[i+1]){
++                    swap(arr, i, i+1);
++                }
++            }
++        }
++    }
++
++    private static void swap(int[] arr, int i, int j) {
++        int tmp = arr[i];
++        arr[i] = arr[j];
++        arr[j] = tmp;
++    }
++}
+Index: src/one/selectionSort.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/one/selectionSort.java	(date 1595949240909)
++++ src/one/selectionSort.java	(date 1595949240909)
+@@ -0,0 +1,23 @@
++package one;
++
++public class selectionSort {
++
++    public static void selectionSort(int[] arr){
++        if (arr == null || arr.length < 2){
++            return;
++        }
++
++        for (int i = 0; i<arr.length-1; i++){
++            int minIndex = i;
++            for (int j = i+1; j<arr.length-1;i++){
++                minIndex = j<arr[minIndex] ?j: minIndex ;
++            }
++            swap(arr, i, minIndex);
++        }
++    }
++    private static void swap(int[] arr, int i, int j) {
++        int tmp = arr[i];
++        arr[i] = arr[j];
++        arr[j] = tmp;
++    }
++}
+Index: src/one/insertionSort.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/one/insertionSort.java	(date 1596035198132)
++++ src/one/insertionSort.java	(date 1596035198132)
+@@ -0,0 +1,23 @@
++package one;
++
++public class insertionSort {
++    public static void insertionSort(int[] arr){
++        if (arr == null || arr.length <2){
++            return;
++        }
++        for (int i = 1; i<arr.length;i++){
++            for (int j = i-1; j>=0 && arr[j]> arr[j+1];j--){
++                swap(arr, j, j+1);
++            }
++        }
++    }
++    private static void swap(int[] arr, int i, int j) {
++        int tmp = arr[i];
++        arr[i] = arr[j];
++        arr[j] = tmp;
++        // 位运算进行交换
++//        arr[i] = arr[i] ^ arr[j];
++//        arr[j] = arr[i]^arr[j];
++//        arr[i] = arr[i] ^ arr[j];
++    }
++}
