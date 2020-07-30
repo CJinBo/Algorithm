@@ -4,25 +4,25 @@ import java.util.Arrays;
 
 public class testUtil {
 
-    public static void selectionSort(int[] arr){
-        if (arr == null || arr.length < 2){
+    public static void selectionSort(int[] arr) {
+        if (arr == null || arr.length < 2) {
             return;
         }
-
-        for (int i = 0; i<arr.length-1; i++){
+        for (int i = 0; i < arr.length - 1; i++) {
             int minIndex = i;
-            for (int j = i+1; j<arr.length-1;i++){
-                minIndex = j<arr[minIndex] ?j: minIndex ;
+            for (int j = i + 1; j < arr.length; j++) {
+                minIndex = arr[j] < arr[minIndex] ? j : minIndex;
             }
             swap(arr, i, minIndex);
-
         }
     }
-    private static void swap(int[] arr, int i, int j) {
+
+    public static void swap(int[] arr, int i, int j) {
         int tmp = arr[i];
         arr[i] = arr[j];
         arr[j] = tmp;
     }
+
     // for test
     public static void comparator(int[] arr) {
         Arrays.sort(arr);
@@ -88,7 +88,7 @@ public class testUtil {
         for (int i = 0; i < testTime; i++) {
             int[] arr1 = generateRandomArray(maxSize, maxValue);
             int[] arr2 = copyArray(arr1);
-            selectionSort(arr1);  //你写都方法
+            selectionSort(arr1);
             comparator(arr2);
             if (!isEqual(arr1, arr2)) {
                 succeed = false;
@@ -101,7 +101,7 @@ public class testUtil {
 
         int[] arr = generateRandomArray(maxSize, maxValue);
         printArray(arr);
-        selectionSort(arr);//你写的方法
+        selectionSort(arr);
         printArray(arr);
     }
 }
