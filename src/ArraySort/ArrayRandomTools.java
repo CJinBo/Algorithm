@@ -1,4 +1,4 @@
-package one;
+package ArraySort;
 
 import java.util.Arrays;
 
